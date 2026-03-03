@@ -1,42 +1,118 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
-}
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
   html {
-    color-scheme: dark;
+    scroll-behavior: smooth;
   }
+
+  body {
+    @apply bg-bg-primary text-text-primary font-inter antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-bg-secondary;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded;
+  }
+}
+
+@layer components {
+  /* Section heading with blue left bar */
+  .section-heading {
+    @apply flex items-center gap-3 text-xl font-bold text-text-primary mb-5 mt-8;
+  }
+  .section-heading::before {
+    content: '';
+    @apply w-1 h-6 bg-accent rounded flex-shrink-0;
+  }
+
+  /* Cards */
+  .card-base {
+    @apply bg-bg-card border border-border rounded-2xl p-5 transition-all duration-300;
+  }
+  .card-hover {
+    @apply hover:border-accent/50 hover:shadow-[0_4px_30px_rgba(59,130,246,0.08)] hover:-translate-y-0.5;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply flex items-center justify-center gap-2 px-6 py-4 bg-accent text-white text-base font-semibold rounded-2xl transition-all duration-200 hover:bg-accent-dark hover:-translate-y-0.5 hover:shadow-[0_8px_25px_rgba(59,130,246,0.35)] active:translate-y-0 cursor-pointer;
+  }
+
+  /* Tech tags */
+  .tech-tag {
+    @apply px-3 py-1 bg-bg-input border border-border rounded-full text-xs text-text-secondary font-medium;
+  }
+
+  /* Skill pill */
+  .skill-pill {
+    @apply px-3 py-1.5 bg-bg-input border border-border rounded-full text-xs text-text-secondary font-medium transition-colors hover:border-accent hover:text-accent-light;
+  }
+
+  /* Badge */
+  .badge-blue {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-accent/10 text-accent-light border border-accent/20;
+  }
+
+  /* Form inputs */
+  .form-input {
+    @apply w-full bg-bg-input border border-border rounded-xl px-4 py-3.5 text-text-primary text-sm outline-none transition-colors focus:border-accent placeholder:text-text-muted;
+  }
+
+  /* Contact link card */
+  .contact-card {
+    @apply flex items-center justify-between p-4 bg-bg-card border border-border rounded-2xl transition-all hover:border-accent hover:bg-bg-input;
+  }
+
+  /* Avatar glow animation */
+  .avatar-ring {
+    @apply relative;
+  }
+
+  /* Active nav indicator */
+  .nav-active-line::before {
+    content: '';
+    @apply absolute top-0 left-1/2 -translate-x-1/2 w-6 h-0.5 rounded-b bg-accent;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent to-accent-light bg-clip-text text-transparent;
+  }
+}
+
+/* Animated rotating border for avatar */
+@keyframes rotateBorder {
+  to { transform: rotate(360deg); }
+}
+.avatar-glow-ring::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #3b82f6, transparent, #3b82f6);
+  z-index: -1;
+  animation: rotateBorder 4s linear infinite;
+  opacity: 0.6;
 }
