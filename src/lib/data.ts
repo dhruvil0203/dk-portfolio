@@ -140,6 +140,21 @@ export const projects = [
   },
   {
     id: 4,
+    name: "NoteFlow",
+    icon: "📝",
+    desc: "A full-stack notes app built with Next.js and MongoDB, featuring a REST API for creating, reading, updating, and deleting notes.",
+    features: [
+      "Full CRUD operations via a custom REST API",
+      "MongoDB-backed persistent storage",
+      "Clean Next.js frontend with seamless API integration",
+    ],
+    tech: ["Next.js", "MongoDB", "REST API", "JavaScript"],
+    github: "https://github.com/dhruvil0203/next-notes-app",
+    live: null,
+    stars: 1,
+  },
+  {
+    id: 5,
     name: "MindSpark AI Chatbot",
     icon: "🧠",
     desc: "AI-powered personal assistant designed for students — built with Gemini API for academic help, code assistance, and career counseling.",
@@ -154,7 +169,7 @@ export const projects = [
     stars: 2,
   },
   {
-    id: 5,
+    id: 6,
     name: "Todo App",
     icon: "✅",
     desc: "Clean, responsive task management app built with React and Vite featuring dark mode support and high-performance rendering.",
