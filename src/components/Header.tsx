@@ -5,9 +5,11 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   BsGithub, BsLinkedin, BsList, BsX,
-  BsHouseFill, BsBriefcaseFill, BsPersonFill, BsEnvelopeFill
+  BsHouseFill, BsBriefcaseFill, BsPersonFill, BsEnvelopeFill,
+  BsSun, BsMoon,
 } from 'react-icons/bs';
 import { profile } from '@/lib/data';
+import { useTheme } from '@/context/ThemeContext';
 
 const navLinks = [
   { href: '/', label: 'Home', icon: BsHouseFill },
@@ -20,6 +22,8 @@ export default function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const { theme, toggle } = useTheme();
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
@@ -74,6 +78,14 @@ export default function Header() {
             </nav>
 
             <div className="hidden md:flex items-center gap-3">
+              <button
+                onClick={toggle}
+                aria-label="Toggle theme"
+                className="w-9 h-9 rounded-lg bg-bg-card border border-border flex items-center justify-center text-text-secondary hover:text-accent hover:border-accent transition-all"
+              >
+                {theme === 'dark' ? <BsSun size={16} /> : <BsMoon size={16} />}
+              </button>
+
               <a href={profile.github} target="_blank" rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-bg-card border border-border flex items-center justify-center text-text-secondary hover:text-text-primary hover:border-accent transition-all">
                 <BsGithub size={16} />
@@ -88,13 +100,23 @@ export default function Header() {
               </a>
             </div>
 
-            <button
-              onClick={() => setMenuOpen(!menuOpen)}
-              className="md:hidden w-9 h-9 rounded-lg bg-bg-card border border-border flex items-center justify-center text-text-secondary hover:text-text-primary transition-all"
-              aria-label="Toggle menu"
-            >
-              {menuOpen ? <BsX size={18} /> : <BsList size={18} />}
-            </button>
+            <div className="flex md:hidden items-center gap-2">
+              <button
+                onClick={toggle}
+                aria-label="Toggle theme"
+                className="w-9 h-9 rounded-lg bg-bg-card border border-border flex items-center justify-center text-text-secondary hover:text-accent hover:border-accent transition-all"
+              >
+                {theme === 'dark' ? <BsSun size={16} /> : <BsMoon size={16} />}
+              </button>
+
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="w-9 h-9 rounded-lg bg-bg-card border border-border flex items-center justify-center text-text-secondary hover:text-text-primary transition-all"
+                aria-label="Toggle menu"
+              >
+                {menuOpen ? <BsX size={18} /> : <BsList size={18} />}
+              </button>
+            </div>
           </div>
         </div>
 
@@ -144,3 +166,6 @@ export default function Header() {
     </>
   );
 }
+
+
+

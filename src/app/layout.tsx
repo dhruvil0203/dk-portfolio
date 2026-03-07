@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TabTitle from "@/components/TabTitle";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 export const metadata: Metadata = {
   title: "Dhruvil Mistry | Full Stack Developer",
@@ -30,12 +31,14 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-bg-primary min-h-screen">
-        <TabTitle />
-        <Header />
-        <main className="pt-16 min-h-screen">
-          {children}
-        </main>
-        <Footer />
+        <ThemeProvider>
+          <TabTitle />
+          <Header />
+          <main className="pt-16 min-h-screen">
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

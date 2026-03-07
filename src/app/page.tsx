@@ -44,7 +44,7 @@ export default function HomePage() {
             </div>
 
             
-          </div>
+          </div>  
 
           <div className="order-1 md:order-2 flex-shrink-0">
             <div className="relative avatar-glow-ring w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72">

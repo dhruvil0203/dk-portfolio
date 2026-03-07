@@ -9,10 +9,10 @@ module.exports = {
     extend: {
       colors: {
         bg: {
-          primary: '#0d1117',
-          secondary: '#161b22',
-          card: '#1c2128',
-          input: '#21262d',
+          primary: 'var(--bg-primary)',
+          secondary: 'var(--bg-secondary)',
+          card: 'var(--bg-card)',
+          input: 'var(--bg-input)',
         },
         accent: {
           DEFAULT: '#3b82f6',
@@ -20,13 +20,13 @@ module.exports = {
           dark: '#2563eb',
         },
         border: {
-          DEFAULT: '#30363d',
-          light: '#21262d',
+          DEFAULT: 'var(--border)',
+          light: 'var(--border-light)',
         },
         text: {
-          primary: '#f0f6fc',
-          secondary: '#8b949e',
-          muted: '#6e7681',
+          primary: 'var(--text-primary)',
+          secondary: 'var(--text-secondary)',
+          muted: 'var(--text-muted)',
         },
       },
       fontFamily: {
