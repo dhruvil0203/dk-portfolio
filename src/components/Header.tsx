@@ -141,25 +141,6 @@ export default function Header() {
         </AnimatePresence>
       </header>
 
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-bg-secondary border-t border-border">
-        <div className="flex items-center justify-around py-2 px-2">
-          {navLinks.map(({ href, label, icon: Icon }) => (
-            <Link
-              key={href}
-              href={href}
-              className={`relative flex flex-col items-center gap-1 px-5 py-2 rounded-xl text-xs font-medium transition-all ${
-                pathname === href ? 'text-accent' : 'text-text-muted hover:text-text-secondary'
-              }`}
-            >
-              {pathname === href && (
-                <span className="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-0.5 rounded-b-full bg-accent" />
-              )}
-              <Icon size={20} />
-              {label}
-            </Link>
-          ))}
-        </div>
-      </nav>
     </>
   );
 }
