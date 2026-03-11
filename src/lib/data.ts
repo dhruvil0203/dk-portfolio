@@ -125,6 +125,21 @@ export const projects = [
   },
   {
     id: 3,
+    name: "NoteFlow",
+    icon: "📝",
+    desc: "A full-stack notes app built with Next.js and MongoDB, featuring a REST API for creating, reading, updating, and deleting notes.",
+    features: [
+      "Full CRUD operations via a custom REST API",
+      "MongoDB-backed persistent storage",
+      "Clean Next.js frontend with seamless API integration",
+    ],
+    tech: ["Next.js", "MongoDB", "REST API", "JavaScript"],
+    github: "https://github.com/dhruvil0203/next-notes-app",
+    live: "https://noteflow.dhruvilmistry.in",
+    stars: 1,
+  },
+  {
+    id: 4,
     name: "Bank Transaction System",
     icon: "🏦",
     desc: "Production-grade banking backend with secure authentication, account management, and transaction handling built on the MERN stack.",
@@ -137,21 +152,6 @@ export const projects = [
     github: "https://github.com/dhruvil0203/bank-transaction-system",
     live: null,
     stars: 0,
-  },
-  {
-    id: 4,
-    name: "NoteFlow",
-    icon: "📝",
-    desc: "A full-stack notes app built with Next.js and MongoDB, featuring a REST API for creating, reading, updating, and deleting notes.",
-    features: [
-      "Full CRUD operations via a custom REST API",
-      "MongoDB-backed persistent storage",
-      "Clean Next.js frontend with seamless API integration",
-    ],
-    tech: ["Next.js", "MongoDB", "REST API", "JavaScript"],
-    github: "https://github.com/dhruvil0203/next-notes-app",
-    live: null,
-    stars: 1,
   },
   {
     id: 5,
