@@ -8,7 +8,7 @@ A modern, dark-themed personal portfolio website built with **Next.js 16**, **Ty
 
 ## 🖥️ Preview
 
-![Portfolio Homepage](./public/screenshot.png)
+![Portfolio Homepage](./public/HomePage.png)
 
 ---
 
