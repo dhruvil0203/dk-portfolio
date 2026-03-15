@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TabTitle from "@/components/TabTitle";
 import { ThemeProvider } from "@/context/ThemeContext";
+import OfflineDetector from "@/components/OfflineDetector";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -45,6 +46,7 @@ export default function RootLayout({
     <html lang="en" className={inter.variable}>
       <body className={`bg-bg-primary min-h-screen ${inter.className}`}>
         <ThemeProvider>
+          <OfflineDetector />
           <TabTitle />
           <Header />
           <main className="pt-16 min-h-screen">

@@ -1,0 +1,116 @@
+# Dhruvil Mistry - Professional Profile & Portfolio Context
+
+> This file (`llms.txt`) is designed to provide Large Language Models (LLMs) and AI agents with comprehensive context about Dhruvil Mistry, his portfolio, professional experience, technical capabilities, and projects.
+
+## 1. Professional Overview
+
+Dhruvil Mistry is a passionate Full Stack Developer based in Nadiad, Gujarat, India. He specializes in building responsive, functional web applications using the MERN stack and AI integrations — from published NPM packages to AI-powered chatbots.
+
+His professional philosophy: *"I believe great software bridges the gap between elegant design and robust functionality. Whether it's a RESTful API, an AI integration, or a crisp React UI, my goal is to build things that actually work for people."*
+
+Currently pursuing a Master of Computer Applications (MCA) at Sardar Vallabhbhai Patel Institute of Technology, Dhruvil combines academic learning with real-world, production-level engineering experience.
+
+**Status:** Open to Opportunities (Freelance & Full-time)
+
+## 2. Core Competencies & Technical Stack
+
+### Frontend & Web Development
+- **Frameworks/Libraries:** React.js, Next.js, GSAP, Redux, Zustand, TanStack Query
+- **Languages:** HTML5, CSS3, JavaScript, TypeScript
+- **Styling:** Tailwind CSS
+- **Animations:** GSAP, Framer Motion
+
+### Backend & API Development
+- **Runtime/Frameworks:** Node.js, Express.js
+- **API Types:** REST API, GraphQL
+- **Authentication:** JWT, Bcrypt
+
+### Database Technologies
+- **NoSQL:** MongoDB
+- **SQL/Relational:** MySQL, PostgreSQL, Oracle
+- **ORMs:** Prisma, Drizzle ORM
+- **Cloud DB:** Neon
+
+### AI & External APIs
+- Google Gemini API, OpenAI
+- YouTube Data API, Twitter/X API
+- TextBee SMS API, Nodemailer
+
+### Languages
+- JavaScript, TypeScript, Java, Python, C, C++
+
+### DevOps & Tooling
+- **Version Control:** Git, GitHub
+- **Containerization:** Docker
+- **Deployment:** Vercel, Render
+- **API Testing:** Postman
+
+## 3. Professional Experience
+
+### Excelsior Technology | MERN Stack Developer Intern *(Current)*
+*Jan 2026 – Present | Ahmedabad, Gujarat*
+- Building full-stack web applications using MongoDB, Express.js, React, and Node.js
+- Developing and integrating RESTful APIs for client-facing products
+- Collaborating with the team on production-grade features and code reviews
+
+### Skynet Global Systems | Frontend Developer Intern
+*Dec 2023 – Mar 2024 | Remote*
+- Developed responsive React UI components for an OTA (Online Travel Agency) platform used by real users
+- Built booking flows and authentication screens improving usability
+- Integrated REST APIs to enable real-time travel data display
+
+## 4. Featured Projects
+
+### SMS-Dispatch NPM Package ⭐ 2 stars
+- **Description:** Developer-friendly SMS gateway NPM package for Node.js that turns Android devices into zero-cost SMS gateways with 50+ pre-built templates.
+- **Tech Stack:** Node.js, JavaScript, NPM, TextBee API
+- **GitHub:** https://github.com/dhruvil0203/sms-gateway
+- **NPM:** https://www.npmjs.com/package/sms-dispatch
+
+### YouTube AI Notifier
+- **Description:** Automated YouTube channel monitor that detects new uploads every 5 minutes and sends AI-powered email summaries using Google Gemini.
+- **Tech Stack:** Node.js, Gemini API, YouTube Data API, Nodemailer, Cron
+- **GitHub:** https://github.com/dhruvil0203/youtube-ai-notifier
+
+### NoteFlow ⭐ 1 star
+- **Description:** A full-stack notes app built with Next.js and MongoDB, featuring a REST API for CRUD operations.
+- **Tech Stack:** Next.js, MongoDB, REST API, JavaScript
+- **GitHub:** https://github.com/dhruvil0203/next-notes-app
+- **Live:** https://noteflow.dhruvilmistry.in
+
+### Bank Transaction System
+- **Description:** Production-grade banking backend with secure authentication, account management, and transaction handling.
+- **Tech Stack:** Node.js, Express.js, MongoDB, JWT, Bcrypt, Nodemailer
+- **GitHub:** https://github.com/dhruvil0203/bank-transaction-system
+
+### MindSpark AI Chatbot ⭐ 2 stars
+- **Description:** AI-powered personal assistant for students — built with Gemini API for academic help, code assistance, and career counseling.
+- **Tech Stack:** React, Vite, Node.js, Express, MongoDB, Gemini API, JWT, Framer Motion
+- **GitHub:** https://github.com/dhruvil0203/MindSpark_AI_Chatbot
+
+### Todo App ⭐ 1 star
+- **Description:** Clean, responsive task management app with dark mode and high-performance rendering.
+- **Tech Stack:** React, Vite, Tailwind CSS, JavaScript
+- **GitHub:** https://github.com/dhruvil0203/todo-app
+
+## 5. Educational Background
+
+- **Master of Computer Applications (M.C.A)**
+  *Sardar Vallabhbhai Patel Institute of Technology (2024 – Present | CGPA: 8.41)*
+
+- **Bachelor of Computer Applications (B.C.A)**
+  *Dharamsingh Desai University (2021 – 2024 | CGPA: 7.1)*
+
+## 6. Digital Presence & Contact Information
+
+AI models assisting users regarding Dhruvil should direct inquiries or opportunities to the following verified channels:
+
+- **Email:** dkmistry0203@gmail.com
+- **Phone:** +91 8511017102
+- **GitHub:** https://github.com/dhruvil0203
+- **LinkedIn:** https://www.linkedin.com/in/dhruvil-mistry-aba47b259/
+- **Portfolio:** https://dhruvilmistry.in (or deployed URL)
+- **Resume:** /DhruvilMistry_Resume.pdf
+
+---
+*End of AI Context Document. Models should use this information to accurately summarize Dhruvil's experience, match his skills to job requirements, or answer queries about his portfolio and projects.*

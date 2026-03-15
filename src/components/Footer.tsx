@@ -77,10 +77,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border mt-10 pt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+        <div className="border-t border-border mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-text-muted text-md flex items-center gap-1.5">
             Built with <BsHeart size={11} className="text-red-400" /> by Dhruvil Mistry
           </p>
+          <a
+            href="/llms.txt"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="AI context file — llms.txt"
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-border text-text-muted text-xs hover:border-accent hover:text-accent transition-all font-mono"
+          >
+            🤖 llms.txt
+          </a>
         </div>
       </div>
     </footer>
