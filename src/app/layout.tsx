@@ -1,9 +1,17 @@
 import type { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TabTitle from "@/components/TabTitle";
 import { ThemeProvider } from "@/context/ThemeContext";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export const viewport: Viewport = {
   themeColor: "#6366f1",
@@ -21,7 +29,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "DK Portfolio",
+    title: "Dhruvil Mistry",
   },
   openGraph: {
     title: "Dhruvil Mistry | Full Stack Developer",
@@ -30,21 +38,12 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="bg-bg-primary min-h-screen">
+    <html lang="en" className={inter.variable}>
+      <body className={`bg-bg-primary min-h-screen ${inter.className}`}>
         <ThemeProvider>
           <TabTitle />
           <Header />
@@ -57,3 +56,4 @@ export default function RootLayout({
     </html>
   );
 }
+

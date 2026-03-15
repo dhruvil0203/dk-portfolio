@@ -50,8 +50,9 @@ export default function HomePage() {
             <div className="relative avatar-glow-ring w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72">
               <Image
                 src="/profile-real.jpg"
-                alt="Dhruvil Mistry"
+                alt="Dhruvil Mistry - Full Stack Developer"
                 fill
+                sizes="(max-width: 768px) 192px, (max-width: 1024px) 256px, 288px"
                 className="rounded-full object-cover object-top border-4 border-accent/30 shadow-2xl shadow-accent/20"
                 priority
               />
