@@ -1,0 +1,57 @@
+{
+  "name": "Dhruvil Mistry | Full Stack Developer",
+  "short_name": "DK Portfolio",
+  "description": "Full Stack Developer specializing in React, Node.js, MongoDB, and AI integrations. Explore my projects, experience, and get in touch.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0f0f0f",
+  "theme_color": "#6366f1",
+  "categories": ["portfolio", "developer", "technology"],
+  "icons": [
+    {
+      "src": "/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "About Me",
+      "url": "/about",
+      "description": "Learn more about Dhruvil Mistry",
+      "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96", "type": "image/png" }]
+    },
+    {
+      "name": "My Work",
+      "url": "/work",
+      "description": "Explore projects and experience",
+      "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96", "type": "image/png" }]
+    },
+    {
+      "name": "Contact",
+      "url": "/contact",
+      "description": "Get in touch with Dhruvil",
+      "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96", "type": "image/png" }]
+    }
+  ]
+}

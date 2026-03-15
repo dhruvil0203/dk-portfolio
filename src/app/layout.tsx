@@ -1,21 +1,35 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TabTitle from "@/components/TabTitle";
 import { ThemeProvider } from "@/context/ThemeContext";
 
+export const viewport: Viewport = {
+  themeColor: "#6366f1",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export const metadata: Metadata = {
   title: "Dhruvil Mistry | Full Stack Developer",
   description: "Full Stack Developer specializing in React, Node.js, MongoDB, and AI integrations. Explore my projects, experience, and get in touch.",
   keywords: ["Dhruvil Mistry", "Full Stack Developer", "React", "Next.js", "Node.js", "MERN", "Portfolio"],
   authors: [{ name: "Dhruvil Mistry" }],
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "DK Portfolio",
+  },
   openGraph: {
     title: "Dhruvil Mistry | Full Stack Developer",
     description: "MERN Stack Developer & AI enthusiast. Building real-world applications.",
     type: "website",
   },
 };
+
 
 export default function RootLayout({
   children,
