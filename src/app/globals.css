@@ -122,6 +122,22 @@
     content: '';
     @apply absolute top-0 left-1/2 -translate-x-1/2 w-6 h-0.5 rounded-b bg-accent;
   }
+
+  /* Bottom Navigation Bar (mobile only) */
+  .bottom-nav {
+    @apply fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around border-t border-border h-16 px-2 md:hidden;
+    background-color: var(--bg-secondary);
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-item {
+    @apply flex flex-col items-center justify-center gap-1 flex-1 py-2 text-text-muted font-medium transition-all duration-200 rounded-xl;
+    font-size: 10px;
+  }
+
+  .nav-item.active {
+    @apply text-accent;
+  }
 }
 
 @layer utilities {
@@ -139,6 +155,18 @@
   position: absolute;
   inset: -4px;
   border-radius: 50%;
+  background: conic-gradient(from 0deg, #3b82f6, transparent, #3b82f6);
+  z-index: -1;
+  animation: rotateBorder 4s linear infinite;
+  opacity: 0.6;
+}
+
+/* Square variant for rounded-2xl avatar (used on About page) */
+.avatar-glow-ring-square::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 20px;
   background: conic-gradient(from 0deg, #3b82f6, transparent, #3b82f6);
   z-index: -1;
   animation: rotateBorder 4s linear infinite;

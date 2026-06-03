@@ -2,8 +2,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, Variants } from 'framer-motion';
-import { BsDownload, BsGithub, BsLinkedin, BsArrowRight, BsStarFill } from 'react-icons/bs';
-import { profile, stats, skillCards, projects } from '@/lib/data';
+import { BsDownload, BsGithub, BsLinkedin, BsArrowRight, BsStarFill, BsBoxArrowUpRight } from 'react-icons/bs';
+import { profile, skillCards, featuredProjects, moreProjects } from '@/lib/data';
 
 const container: Variants = {
   hidden: {},
@@ -30,14 +30,14 @@ export default function HomePage() {
               <span className="text-text-secondary text-3xl sm:text-4xl lg:text-5xl font-bold">Full Stack Developer</span>
             </h1>
             <p className="text-text-secondary text-base md:text-lg max-w-xl mx-auto md:mx-0 mb-8 leading-relaxed">
-              I build responsive, functional web applications — from published NPM packages to AI-powered chatbots using the MERN stack.
+              I build responsive, functional web applications — from published NPM packages to AI-powered RAG systems and full-stack web solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
               <Link href="/work"
                 className="btn-primary rounded-xl px-6 py-3.5 text-sm">
                 View My Work <BsArrowRight size={14} />
               </Link>
-              <a href="/DhruvilMistry_Resume.pdf" download
+              <a href="/Dhruvil_Mistry_Resume.pdf" download
                 className="flex items-center justify-center gap-2 px-6 py-3.5 bg-bg-card border border-border text-text-primary text-sm font-semibold rounded-xl hover:border-accent hover:text-accent transition-all">
                 <BsDownload size={14} /> Download CV
               </a>
@@ -83,6 +83,7 @@ export default function HomePage() {
           </div>
         </motion.section>
 
+        {/* Featured Projects — Filogram, SMS-Dispatch & Nudge */}
         <motion.section variants={item}>
           <div className="flex items-center justify-between">
             <h2 className="section-heading">Featured Projects</h2>
@@ -90,39 +91,56 @@ export default function HomePage() {
               All projects <BsArrowRight size={12} />
             </Link>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {projects.slice(0, 3).map((project) => (
-              <div key={project.id} className="card-base card-hover flex flex-col gap-3">
-                <div className="flex items-start justify-between">
-                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-2xl">
-                    {project.icon}
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {[...featuredProjects, ...moreProjects].map((project) => (
+                <div key={project.id} className="card-base card-hover flex flex-col gap-3">
+                  <div className="flex items-start justify-between">
+                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-2xl">
+                      {project.icon}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      {project.stars > 0 && (
+                        <span className="flex items-center gap-1 text-xs text-text-muted">
+                          <BsStarFill size={10} className="text-yellow-400" /> {project.stars}
+                        </span>
+                      )}
+                      <a href={project.github} target="_blank" rel="noopener noreferrer"
+                        className="w-8 h-8 rounded-lg bg-bg-input border border-border flex items-center justify-center text-text-secondary hover:text-accent hover:border-accent transition-all">
+                        <BsGithub size={13} />
+                      </a>
+                      {project.live && (
+                        <a href={project.live} target="_blank" rel="noopener noreferrer"
+                          className="w-8 h-8 rounded-lg bg-bg-input border border-border flex items-center justify-center text-text-secondary hover:text-accent hover:border-accent transition-all">
+                          <BsBoxArrowUpRight size={11} />
+                        </a>
+                      )}
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    {project.stars > 0 && (
-                      <span className="flex items-center gap-1 text-xs text-text-muted">
-                        <BsStarFill size={10} className="text-yellow-400" /> {project.stars}
-                      </span>
+                  <h3 className="font-bold text-text-primary text-base">{project.name}</h3>
+                  <p className="text-text-secondary text-xs leading-relaxed flex-1">{project.desc}</p>
+                  <ul className="space-y-1.5">
+                    {project.features.map((f, i) => (
+                      <li key={i} className="flex items-start gap-2 text-xs text-text-muted leading-relaxed">
+                        <span className="text-accent flex-shrink-0 mt-0.5">→</span>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-wrap gap-1.5 mt-auto pt-3 border-t border-border">
+                    {project.tech.slice(0, 4).map((t) => (
+                      <span key={t} className="tech-tag">{t}</span>
+                    ))}
+                    {project.tech.length > 4 && (
+                      <span className="tech-tag">+{project.tech.length - 4}</span>
                     )}
-                    <a href={project.github} target="_blank" rel="noopener noreferrer"
-                      className="w-8 h-8 rounded-lg bg-bg-input border border-border flex items-center justify-center text-text-secondary hover:text-accent hover:border-accent transition-all">
-                      <BsGithub size={13} />
-                    </a>
                   </div>
                 </div>
-                <h3 className="font-bold text-text-primary text-base">{project.name}</h3>
-                <p className="text-text-secondary text-xs leading-relaxed flex-1">{project.desc}</p>
-                <div className="flex flex-wrap gap-1.5 mt-auto">
-                  {project.tech.slice(0, 3).map((t) => (
-                    <span key={t} className="tech-tag">{t}</span>
-                  ))}
-                  {project.tech.length > 3 && (
-                    <span className="tech-tag">+{project.tech.length - 3}</span>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
         </motion.section>
+
+
 
         <motion.section variants={item} className="mt-16 text-center py-16 px-8 rounded-3xl bg-gradient-to-br from-accent/10 to-bg-card border border-accent/20">
           <h2 className="text-3xl font-black text-text-primary mb-3">Let's Build Something Together</h2>

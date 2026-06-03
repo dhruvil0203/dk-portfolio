@@ -69,7 +69,7 @@ export default function Footer() {
                 <span className="text-accent">📍</span>
                 {profile.location}
               </p>
-              <a href="/DhruvilMistry_Resume.pdf" download
+              <a href="/Dhruvil_Mistry_Resume.pdf" download
                 className="inline-flex items-center gap-2 mt-3 px-4 py-2.5 bg-accent/10 border border-accent/30 text-accent text-sm font-medium rounded-xl hover:bg-accent hover:text-white transition-all">
                 Download Resume ↓
               </a>

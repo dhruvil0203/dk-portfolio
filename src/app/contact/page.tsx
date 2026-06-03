@@ -94,7 +94,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <a href="/DhruvilMistry_Resume.pdf" download
+            <a href="/Dhruvil_Mistry_Resume.pdf" download
               className="flex items-center justify-center gap-2 py-4 w-full bg-accent/10 border border-accent/30 text-accent font-semibold rounded-2xl hover:bg-accent hover:text-white transition-all text-sm">
               📄 Download My Resume
             </a>

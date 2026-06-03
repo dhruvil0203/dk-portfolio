@@ -94,7 +94,7 @@ export default function Header() {
                 className="w-9 h-9 rounded-lg bg-bg-card border border-border flex items-center justify-center text-text-secondary hover:text-text-primary hover:border-accent transition-all">
                 <BsLinkedin size={16} />
               </a>
-              <a href="/DhruvilMistry_Resume.pdf" download
+              <a href="/Dhruvil_Mistry_Resume.pdf" download
                 className="px-4 py-2 bg-accent text-white text-sm font-semibold rounded-lg hover:bg-accent-dark transition-all hover:shadow-lg hover:shadow-accent/30">
                 Resume
               </a>
@@ -153,7 +153,7 @@ export default function Header() {
                     <BsLinkedin size={16} /> LinkedIn
                   </a>
                 </div>
-                <a href="/DhruvilMistry_Resume.pdf" download
+                <a href="/Dhruvil_Mistry_Resume.pdf" download
                   className="flex items-center justify-center py-3 mt-1 bg-accent text-white text-sm font-semibold rounded-xl hover:bg-accent-dark transition-all">
                   Download Resume
                 </a>

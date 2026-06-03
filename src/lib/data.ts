@@ -63,7 +63,7 @@ export const experience = [
 
 export const skills = {
   frontend: ["HTML", "CSS", "Tailwind CSS", "React.js", "Next.js", "Tanstack Query", "GSAP", "Redux", "Zustand",],
-  backend: ["Node.js", "Express.js", "REST API", "GraphQL"],
+  backend: ["Node.js", "Express.js", "Python", "REST API", "GraphQL"],
   database: ["MongoDB", "MySQL", "Oracle", "PostgreSQL"],
   languages: ["JavaScript", "TypeScript", "Java", "Python", "C", "C++"],
   tools: ["Git", "GitHub", "Docker", "Postman", "Vercel", "Render", "Prisma", "Drizzle ORM", "Neon"],
@@ -78,12 +78,12 @@ export const skillCards = [
   {
     icon: "⚙️",
     title: "Backend",
-    desc: "Node.js, Express, REST, GraphQL",
+    desc: "Node.js, Express, Python, REST, GraphQL",
   },
   {
     icon: "🗄️",
     title: "Database",
-    desc: "MongoDB, MySQL, PostgreSQL,Oracle",
+    desc: "MongoDB, MySQL, PostgreSQL, Oracle, Vector DB",
   },
   {
     icon: "🤖",
@@ -92,9 +92,25 @@ export const skillCards = [
   },
 ];
 
-export const projects = [
+// Featured projects shown on the home page (first 2 in "Featured Projects" section)
+export const featuredProjects = [
   {
     id: 1,
+    name: "Filogram",
+    icon: "📁",
+    desc: "Use Telegram as your personal cloud — upload, store, and retrieve files via a blazing-fast REST API. Zero cost, zero hassle.",
+    features: [
+      "Upload & retrieve files via clean REST API endpoints",
+      "Telegram Bot API integration for zero-cost cloud storage",
+      "MongoDB-backed file metadata with Mongoose ODM",
+    ],
+    tech: ["Node.js", "Express.js", "MongoDB", "Telegram Bot API", "Multer", "NPM"],
+    github: "https://github.com/dhruvil0203/filogram",
+    live: "https://www.npmjs.com/package/filogram",
+    stars: 0,
+  },
+  {
+    id: 2,
     name: "SMS-Dispatch NPM Package",
     icon: "📦",
     desc: "Developer-friendly SMS gateway NPM package for Node.js that turns Android devices into zero-cost SMS gateways with 50+ pre-built templates.",
@@ -108,8 +124,48 @@ export const projects = [
     live: "https://www.npmjs.com/package/sms-dispatch",
     stars: 2,
   },
+];
+
+// Project shown in the "More Projects" section on the home page
+export const moreProjects = [
   {
-    id: 2,
+    id: 3,
+    name: "Nudge",
+    icon: "🔔",
+    desc: "A React Native mobile app that lets you save links from any app and get nudged to read or watch them later with smart reminders.",
+    features: [
+      "Save links via native Share Sheet with auto Open Graph metadata",
+      "Smart reminders with local push notifications & snooze",
+      "Fully offline with SQLite — no cloud, complete privacy",
+    ],
+    tech: ["React Native", "Expo", "TypeScript", "SQLite", "Push Notifications"],
+    github: "https://github.com/dhruvil0203/nudge-app",
+    live: null,
+    stars: 0,
+  },
+];
+
+// All projects shown on the /work page
+export const projects = [
+  ...featuredProjects,
+  ...moreProjects,
+  {
+    id: 9,
+    name: "SVIT RAG Demo",
+    icon: "🔍",
+    desc: "A Retrieval-Augmented Generation (RAG) demo — answers questions from custom documents using vector search and LLM generation.",
+    features: [
+      "Document ingestion with vector embeddings for semantic search",
+      "LLM-powered answer generation grounded in retrieved context",
+      "End-to-end RAG pipeline with a custom knowledge base",
+    ],
+    tech: ["Python", "LangChain", "Vector DB", "LLM", "RAG"],
+    github: "https://github.com/dhruvil0203/RAG_Demo",
+    live: null,
+    stars: 0,
+  },
+  {
+    id: 4,
     name: "YouTube AI Notifier",
     icon: "📺",
     desc: "Automated YouTube channel monitor that detects new uploads every 5 minutes and sends AI-powered email summaries using Google Gemini.",
@@ -124,7 +180,7 @@ export const projects = [
     stars: 0,
   },
   {
-    id: 3,
+    id: 5,
     name: "NoteFlow",
     icon: "📝",
     desc: "A full-stack notes app built with Next.js and MongoDB, featuring a REST API for creating, reading, updating, and deleting notes.",
@@ -136,51 +192,6 @@ export const projects = [
     tech: ["Next.js", "MongoDB", "REST API", "JavaScript"],
     github: "https://github.com/dhruvil0203/next-notes-app",
     live: "https://noteflow.dhruvilmistry.in",
-    stars: 1,
-  },
-  {
-    id: 4,
-    name: "Bank Transaction System",
-    icon: "🏦",
-    desc: "Production-grade banking backend with secure authentication, account management, and transaction handling built on the MERN stack.",
-    features: [
-      "JWT & Bcrypt-secured user authentication",
-      "Full account management and transaction API",
-      "Automated email notifications via Nodemailer",
-    ],
-    tech: ["Node.js", "Express.js", "MongoDB", "JWT", "Bcrypt", "Nodemailer"],
-    github: "https://github.com/dhruvil0203/bank-transaction-system",
-    live: null,
-    stars: 0,
-  },
-  {
-    id: 5,
-    name: "MindSpark AI Chatbot",
-    icon: "🧠",
-    desc: "AI-powered personal assistant designed for students — built with Gemini API for academic help, code assistance, and career counseling.",
-    features: [
-      "Gemini-powered intelligent chat with context memory",
-      "React frontend with Framer Motion animations",
-      "JWT-based secure auth with MongoDB backend",
-    ],
-    tech: ["React", "Vite", "Node.js", "Express", "MongoDB", "Gemini API", "JWT", "Framer Motion"],
-    github: "https://github.com/dhruvil0203/MindSpark_AI_Chatbot",
-    live: null,
-    stars: 2,
-  },
-  {
-    id: 6,
-    name: "Todo App",
-    icon: "✅",
-    desc: "Clean, responsive task management app built with React and Vite featuring dark mode support and high-performance rendering.",
-    features: [
-      "Add, edit, and delete tasks with instant feedback",
-      "Dark mode and clean task filtering UI",
-      "Built with Vite for blazing-fast performance",
-    ],
-    tech: ["React", "Vite", "Tailwind CSS", "JavaScript"],
-    github: "https://github.com/dhruvil0203/todo-app",
-    live: null,
     stars: 1,
   },
 ];

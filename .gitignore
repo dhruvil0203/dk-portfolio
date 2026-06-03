@@ -46,6 +46,7 @@ public/workbox-*.js
 public/sw.js.map
 public/workbox-*.js.map
 public/swe-worker-*.js
+public/fallback-*.js
 
 # WhatsApp/personal screenshots (not for git)
 public/WhatsApp*

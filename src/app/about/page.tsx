@@ -32,7 +32,7 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="flex-shrink-0 mx-auto lg:mx-0">
-            <div className="relative avatar-glow-ring w-40 h-40 md:w-52 md:h-52">
+            <div className="relative avatar-glow-ring-square w-40 h-40 md:w-52 md:h-52">
               <Image
                 src="/profile.png"
                 alt="Dhruvil Mistry"
