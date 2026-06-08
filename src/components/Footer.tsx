@@ -8,6 +8,9 @@ const footerLinks = [
   { href: '/work', label: 'Work' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
+  { href: '/#skills', label: 'Skills' },
+  { href: '/#projects', label: 'Projects' },
+  { href: '/#faq', label: 'FAQ' },
 ];
 
 export default function Footer() {

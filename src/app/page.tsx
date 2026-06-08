@@ -2,8 +2,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, Variants } from 'framer-motion';
-import { BsDownload, BsGithub, BsLinkedin, BsArrowRight, BsStarFill, BsBoxArrowUpRight } from 'react-icons/bs';
-import { profile, skillCards, featuredProjects, moreProjects } from '@/lib/data';
+import { useState } from 'react';
+import { BsDownload, BsGithub, BsLinkedin, BsArrowRight, BsStarFill, BsBoxArrowUpRight, BsChevronDown } from 'react-icons/bs';
+import { profile, skillCards, featuredProjects, moreProjects, faqs } from '@/lib/data';
 
 const container: Variants = {
   hidden: {},
@@ -14,20 +15,84 @@ const item: Variants = {
   show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: 'easeOut' as const } },
 };
 
+function FaqAccordion() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  return (
+    <>
+      <div className="space-y-3">
+        {faqs.map((faq, i) => (
+          <div
+            key={i}
+            className="card-base overflow-hidden transition-all duration-300"
+          >
+            <button
+              onClick={() => setOpenIndex(openIndex === i ? null : i)}
+              className="w-full flex items-center justify-between gap-4 text-left p-5 cursor-pointer"
+              aria-expanded={openIndex === i}
+              id={`faq-question-${i}`}
+            >
+              <span className="font-semibold text-text-primary text-sm md:text-base">
+                {faq.question}
+              </span>
+              <BsChevronDown
+                size={16}
+                className={`text-accent flex-shrink-0 transition-transform duration-300 ${
+                  openIndex === i ? 'rotate-180' : ''
+                }`}
+              />
+            </button>
+            <div
+              className={`overflow-hidden transition-all duration-300 ${
+                openIndex === i ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'
+              }`}
+              role="region"
+              aria-labelledby={`faq-question-${i}`}
+            >
+              <p className="px-5 pb-5 text-text-secondary text-sm leading-relaxed">
+                {faq.answer}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* FAQPage JSON-LD for rich results */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqs.map((faq) => ({
+              '@type': 'Question',
+              name: faq.question,
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: faq.answer,
+              },
+            })),
+          }),
+        }}
+      />
+    </>
+  );
+}
+
 export default function HomePage() {
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <motion.div variants={container} initial="hidden" animate="show">
 
-        <motion.section variants={item} className="flex flex-col md:flex-row items-center gap-10 md:gap-16 py-10 md:py-16">
+        <motion.section id="hero" variants={item} className="flex flex-col md:flex-row items-center gap-10 md:gap-16 py-10 md:py-16">
           <div className="flex-1 text-center md:text-left order-2 md:order-1">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-accent/10 border border-accent/20 rounded-full text-accent text-xs font-semibold mb-5">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
               Open to Opportunities
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-text-primary mb-4 leading-tight">
-              Hi, I'm <span className="text-gradient">Dhruvil</span><br />
-              <span className="text-text-secondary text-3xl sm:text-4xl lg:text-5xl font-bold">Full Stack Developer</span>
+              <span className="text-gradient">Dhruvil Mistry</span><br />
+              <span className="text-text-secondary text-3xl sm:text-4xl lg:text-5xl font-bold">Full Stack Developer in Gujarat, India</span>
             </h1>
             <p className="text-text-secondary text-base md:text-lg max-w-xl mx-auto md:mx-0 mb-8 leading-relaxed">
               I build responsive, functional web applications — from published NPM packages to AI-powered RAG systems and full-stack web solutions.
@@ -50,7 +115,7 @@ export default function HomePage() {
             <div className="relative avatar-glow-ring w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72">
               <Image
                 src="/profile-real.jpg"
-                alt="Dhruvil Mistry - Full Stack Developer"
+                alt="Dhruvil Mistry — Full Stack Developer from Gujarat, India"
                 fill
                 sizes="(max-width: 768px) 192px, (max-width: 1024px) 256px, 288px"
                 className="rounded-full object-cover object-top border-4 border-accent/30 shadow-2xl shadow-accent/20"
@@ -70,7 +135,7 @@ export default function HomePage() {
           </div>
         </motion.section>
 
-        <motion.section variants={item}>
+        <motion.section id="skills" variants={item}>
           <h2 className="section-heading">Core Expertise</h2>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {skillCards.map((s) => (
@@ -84,7 +149,7 @@ export default function HomePage() {
         </motion.section>
 
         {/* Featured Projects — Filogram, SMS-Dispatch & Nudge */}
-        <motion.section variants={item}>
+        <motion.section id="projects" variants={item}>
           <div className="flex items-center justify-between">
             <h2 className="section-heading">Featured Projects</h2>
             <Link href="/work" className="text-accent text-sm font-medium hover:underline flex items-center gap-1">
@@ -140,9 +205,16 @@ export default function HomePage() {
             </div>
         </motion.section>
 
+        {/* FAQ Section */}
+        <motion.section id="faq" variants={item} className="mt-16">
+          <h2 className="section-heading">Frequently Asked Questions</h2>
+          <p className="text-text-secondary text-sm md:text-base mb-6 max-w-2xl">
+            Common questions about my work, availability, and tech stack.
+          </p>
+          <FaqAccordion />
+        </motion.section>
 
-
-        <motion.section variants={item} className="mt-16 text-center py-16 px-8 rounded-3xl bg-gradient-to-br from-accent/10 to-bg-card border border-accent/20">
+        <motion.section id="cta" variants={item} className="mt-16 text-center py-16 px-8 rounded-3xl bg-gradient-to-br from-accent/10 to-bg-card border border-accent/20">
           <h2 className="text-3xl font-black text-text-primary mb-3">Let's Build Something Together</h2>
           <p className="text-text-secondary mb-8 max-w-md mx-auto">Have a project in mind? I'd love to hear about it and see if I can help.</p>
           <Link href="/contact"

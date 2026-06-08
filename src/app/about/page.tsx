@@ -35,7 +35,7 @@ export default function AboutPage() {
             <div className="relative avatar-glow-ring-square w-40 h-40 md:w-52 md:h-52">
               <Image
                 src="/profile.png"
-                alt="Dhruvil Mistry"
+                alt="Dhruvil Mistry — Full Stack Developer from Gujarat, India"
                 fill
                 className="rounded-2xl object-cover border-2 border-accent/30"
               />

@@ -195,3 +195,36 @@ export const projects = [
     stars: 1,
   },
 ];
+
+export const faqs = [
+  {
+    question: "What technologies does Dhruvil work with?",
+    answer:
+      "Dhruvil specializes in the MERN stack — MongoDB, Express.js, React, and Node.js. He also works with Next.js, TypeScript, PostgreSQL, Docker, and AI tools like Google Gemini and LangChain for building intelligent applications.",
+  },
+  {
+    question: "Is Dhruvil available for freelance or full-time work?",
+    answer:
+      "Yes! Dhruvil is open to both freelance projects and full-time opportunities. He is currently interning as a MERN Stack Developer while pursuing his MCA, and is actively looking for exciting roles in full-stack development.",
+  },
+  {
+    question: "Where is Dhruvil based?",
+    answer:
+      "Dhruvil is based in Nadiad, Gujarat, India. He is available for remote work globally and on-site opportunities within India.",
+  },
+  {
+    question: "What kind of projects has Dhruvil built?",
+    answer:
+      "Dhruvil has built published NPM packages (Filogram, SMS-Dispatch), AI-powered applications (YouTube AI Notifier, SVIT RAG Demo), a React Native mobile app (Nudge), and full-stack web solutions like NoteFlow — all focused on solving real-world problems.",
+  },
+  {
+    question: "How can I contact Dhruvil?",
+    answer:
+      "You can reach Dhruvil via email at dkmistry0203@gmail.com, call him at +91 8511017102, or connect on LinkedIn and GitHub. You can also use the contact form on this website.",
+  },
+  {
+    question: "Does Dhruvil have any published open-source packages?",
+    answer:
+      "Yes, Dhruvil has published two NPM packages: Filogram (use Telegram as cloud storage via REST API) and SMS-Dispatch (a developer-friendly SMS gateway with 50+ templates). Both are available on npmjs.com.",
+  },
+];
